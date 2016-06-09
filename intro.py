@@ -31,11 +31,7 @@ def plot_hist(nums):
     print "counts = ", bins[0]
     print "bin values = ", bins[1]
 
-#############################
-#                           #
 # probability distributions #
-#                           #
-#############################
 
 
 def plot_cdf(dist):
