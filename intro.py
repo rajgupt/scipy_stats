@@ -20,7 +20,7 @@ print "kurtosis = %.2f" % basic_stat.kurtosis
 
 # histogram
 bins = plt.hist(nums)
-
+plt.title('Normal Dist Sample Histogram')
 # Tip: to prettify the printing of double numbers, use np.set_printoptions
 np.set_printoptions(precision=2, suppress=True)
 
@@ -40,9 +40,14 @@ nd1 = stats.norm()
 
 # new figure - cdf (commulative probability function)
 plt.figure()
+ax = plt.gca()
 plt.plot(x, nd1.cdf(x), 'r-', label='cdf')
+plt.title('CDF of Normal Dist')
+ax.legend()
 
 # new figure - pdf (probabilty density function)
 plt.figure()
+ax = plt.gca()
 plt.plot(x, nd1.pdf(x), 'r-', label='pdf')
-
+plt.title('PDF of Normal Dist')
+ax.legend()
