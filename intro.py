@@ -58,6 +58,8 @@ def plot_pmf(dist):
     plt.title('PDF of Normal Dist')
     ax.legend()
 
+# function calls
 plot_hist(nums)
 plot_cdf(nd1)
 plot_pmf(nd1)
+
