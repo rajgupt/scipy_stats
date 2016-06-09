@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 nums = sp.randn(100)
 
 basic_stat = stats.describe(nums)
-print "noobs = %i" % basic_stat.nobs
+print "no obs = %i" % basic_stat.nobs
 print "mean = %.2f" % basic_stat.mean
 print "variance = %.2f" % basic_stat.variance
 print "skewness = %.2f" % basic_stat.skewness
@@ -19,7 +19,13 @@ print "kurtosis = %.2f" % basic_stat.kurtosis
 # basic statistic plot
 
 # histogram
-plt.hist(nums, bins=5)
+bins = plt.hist(nums)
+
+# Tip: to prettify the printing of double numbers, use np.set_printoptions
+np.set_printoptions(precision=2, suppress=True)
+
+print "counts = ", bins[0]
+print "bin values = ", bins[1]
 
 #############################
 #                           #
@@ -31,4 +37,12 @@ x = np.arange(-3, 3, 0.1)
 
 # normal distribution
 nd1 = stats.norm()
+
+# new figure - cdf (commulative probability function)
+plt.figure()
+plt.plot(x, nd1.cdf(x), 'r-', label='cdf')
+
+# new figure - pdf (probabilty density function)
+plt.figure()
+plt.plot(x, nd1.pdf(x), 'r-', label='pdf')
 
